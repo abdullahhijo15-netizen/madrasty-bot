@@ -7,7 +7,7 @@ app.use(express.json());
 const TOKEN = process.env.BOT_TOKEN;
 const bot = new TelegramBot(TOKEN);
 
-app.post(`/bot${TOKEN}`, (req, res) => {
+app.post(`/`, (req, res) => {
   bot.processUpdate(req.body);
   res.sendStatus(200);
 });
